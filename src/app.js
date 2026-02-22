@@ -1,7 +1,7 @@
 import * as bootstrap from 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
-import { calcArea } from './circle'
+import { calcArea } from './circle.js'
 
 const doc = {
     form: document.getElementById('plotsForm'),
@@ -16,9 +16,9 @@ doc.form.addEventListener('submit', (e) => {
     e.preventDefault()
     const area1 = calcArea(Number(doc.radius1.value))
     const area2 = calcArea(Number(doc.radius2.value))
-    doc.area1.value = area1
-    doc.area2.value = area2
-    doc.result.value = area1 + area2
+    doc.area1.value = area1.toFixed(2)
+    doc.area2.value = area2.toFixed(2)
+    doc.result.value = (area1 + area2).toFixed(2)
 })
 
 

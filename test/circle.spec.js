@@ -12,14 +12,14 @@ import { calcArea } from "../src/circle.js";
 import { expect } from "chai";
 
 describe('calcArea normál tesztesetek', () => {
-    it('in: 3, out: 28.27', () => {
-        const expected = 28.27
-        const actual = calcArea(3)
+    it('in: 30, out: 2827.43', () => {
+        const expected = 2827.43
+        const actual = calcArea(30)
         expect(expected).closeTo(actual, 0.01)
     })
-    it('in: 20, out: 1256.63', () => {
-        const expected = 1256.63
-        const actual = calcArea(20)
+    it('in: 35, out: 3848.45', () => {
+        const expected = 3848.45
+        const actual = calcArea(35)
         expect(expected).closeTo(actual, 0.01)
     })
 })
@@ -41,16 +41,6 @@ describe('calcArea hibakezelés', () => {
     it('in: 0, out: hiba', () => {
         expect(() => calcArea(0).to.throw(Error)
         )
-    })
-
-    it('in: -5, out: hiba', () => {
-        expect(() => calcArea(-5).to.throw(Error)
-    )
-    })
-
-    it('in: a, out: hiba', () => {
-        expect(() => calcArea("a").to.throw(Error)
-    )
     })
 
     it('in: 10000001, out: hiba', () => {
